@@ -1,24 +1,26 @@
 package myworldsim;
 
-public class CreatureDimension 
+public class CreatureDimension
 {
 	/*
-	 * 
 	 * Class Instance Variables
+	 * 
 	 */
-private int creatureLength;
-private int creatureWidth;
-private int creatureHeight;
+	
+	private int	creatureLength;
+	private int	creatureWidth;
+	private int creatureHeight;
 
 	/*
 	 * Getters
-	 *	 
+	 * 
 	 */
+	
 	public int getLength()
 	{
 		return creatureLength;
-		
 	}
+
 	public int getWidth()
 	{
 		return creatureWidth;
@@ -28,20 +30,16 @@ private int creatureHeight;
 	{
 		return creatureHeight;
 	}
-
-
-
-/*
- * 
- * Constructor Method
- */
-public CreatureDimension(int length, int width, int height)
+	
+	/*
+	 * Constructor Method
+	 * 
+	 */
+	
+	public CreatureDimension(int length, int width, int height)
 	{
-	creatureLength = length;
-	creatureWidth = width;
-	creatureHeight = height;
+		creatureLength 	= length;
+		creatureWidth	= width;
+		creatureHeight	= height;
 	}
-
-
-
 }

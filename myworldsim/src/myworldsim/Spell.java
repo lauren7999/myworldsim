@@ -1,152 +1,144 @@
 package myworldsim;
 
-public class Spell 
+public class Spell
 {
-		/*
-		 * Class Instant Variables
-		 */
-		private int    spellType; //spell type
-		private String spellName;
-		private String spell;    //words for witch to recite
-		
-		
-		/*
-		 * Class Constants
-		 */
-		
-		public static int HEALING         = 1; 
-		public static int CURSE           = 2;
-		
-
-		public static int TRANSFIGURATION = 3;
-	    public static int CHARM           = 4; //changes what an object can do, not what it is
-	    public static int PROTECTIVE      = 5; //protects area not person 
-	    public static int JINX            = 6; //meant for amusement
-	    public static int HEX             = 7; //less than dark magic but more than a jinx, causes light discomfort
-	    
-	    public static String[] CHARM_SPELLS = 
-	    	{
-		    	"Amplifying Charm",
-		    	"Anti Unlocking Charm",
-		    	"Banishing Charm",
-		    	"Disarming Charm",
-		    	"Fixing Charm",
-		    	"Shrinking Charm",
-		    	"Talong-Clipping Charm",
-		    	"Tooth-Shrinking Charm",
-		    	"Unlocking Charm",
-		    	"Stream of Flames",
-		    	"Repairing Charm",
-	    		"Lightning Charm",
-	    		"Invisibility Charm"
-	    	};
-	    public static String[] HEALING_SPELLS = 
-
-	    	{
-	    		"Ferula Spell", //heals broken bones/fractures
-	    		"Episkey Spell", //heals mild to moderate injuries
-	    	 	"Vulnera Spell", //heals deep gashes
-	    	 	
-	    	};
-	    public static String[] CURSES = 
-	    	{
-	    		"Killing Curse",
-	    		"Jelly-Legs Curse",
-	    		"Leg-Locker Curse",
-	    		"Imperius Curse", //places victim in a dream-like state
-	    		"Blasting Curse",
-	    		"Disentegration Curse",
-	    		"Floating Eye Curse"
-	    	};
-	    public static String[] TRANSFIGURATION_SPELLS = 
-	    	{
-	    		"Vanishment Spell",
-	    		"Conjuration Spell",
-	    		"Wolf Into Rat Spell",
-	    		"T-Rex Into Lizard",
-	    		"Human Into Monkey",
-	    		"Gun Into Flower",
-	    	
-	    	};
-	    public static String[] PROTECTIVE_SPELLS = 
-	    	{
-	    		"Invisibilty Spell", //hides a person
-	    		"Force Field Spell",
-	    		"Total Protection Spell", //protects an area
-	    		"Invisibility Shield Spell" //hides an area
-	    	};
-	    
-	    public static String[] JINX_SPELLS = 
-	    	{
-	    		"Back Firing Jinx Spell",
-	    		"Cantis Jinx",   	  //causes victim to only want to sing
-	    		"Dancing Feet Jinx", //causes victim to dance
-	    		"Ebublio Jinx",   	//traps victim inside a large bubble that cannot be popped
-	    		"Finger Removing Jinx",
-	    		"Jelly-Brain Jinx",
-	    		"Knockback Jinx",
-	    		"Levicorpus Jinx", //causes victim to be lifted in air by their feet
-	    		"Vermiculus Jinx" //transforms victim into a worm
-	    	};
-	    
-	    public static String[] HEX_SPELLS = 
-	    	{
-	    		"Redactum Skullus Hex", //shrinks head of victim
-	    		"Stick Fast Hex"       //makes victim's feet stick to the ground
-	    	};
-	    
-	    /*
-	     * Constructor Method
-	     */
-	    
-	   
-	    public Spell(int type, String name) 
-	    {
-	    	spellType = type;
-	    	spellName = name;  
-	    }
-	    
-	    /*
-	     * Getters and Setters
-	     */
-	    public int getSpellType() 
-	    {
-			return spellType;
-		}
-
-		public void setSpellType(int type) 
+	/*
+	 * Class Instance Variables
+	 * 
+	 */
+	
+	private int		spellType;
+	private String	spellName;
+	private String	spell;
+	
+	/*
+	 * Class Constants
+	 * 
+	 */
+	
+	public static int		HEALING			= 1;
+	public static int		CURSE			= 2;
+	public static int		TRANSFIGURATION	= 3;
+	public static int		CHARM			= 4;	// Changes what an object can do, not what it is (e.g., make a human fly)
+	public static int		PROTECTIVE		= 5;	// Protects an area, not a person
+	public static int		JINX			= 6;	// Meant for ammusement, causes enbarraswment or light disconfort
+	public static int		HEX				= 7;	// Moderate harm, less than Dark Magic and more than a Jinx
+	
+	public static String[]	HEALING_SPELLS = 
 		{
-			spellType = type;
-		}
-
-		public String getSpellName()
+			"Ferula Spell",				// Heals fractures
+			"Episky Spell",				// Heals mild to moderate injuries
+			"Vulnera Spell"				// Heals deep gashes
+		};
+	
+	public static String[]	CURSE_SPELLS = 
 		{
-			return spellName;
-		}
-
-		public void setSpellName(String name) 
+			"Killing Curse",
+			"Jelly-Legs Curse",
+			"Leg-Locker Curse",
+			"Imperious Curse",			// Places the victim in a dream-like state
+			"Basting Curse",			// Causes anyting the spell comes into contact with to explode
+			"Disintegration Curse",
+			"Floating Eye Curse"
+		};
+	
+	public static String[] TRANSFIGURATION_SPELLS =
 		{
-			spellName = name;
-		}
-
-		public String getSpell() 
+			"Vanishment Spell",			// Causes things to vanish
+			"Conjuration Spell",		// Causes things to appear
+			"Wolf into Rat Spell",
+			"T-Rex into Lizard Spell",
+			"Human into Monkey Spell",
+			"Gun into Flowrer Spell"
+		};
+	
+	public static String[]	CHARM_SPELLS =
 		{
-			
-			return spell;
-		}
-
-		public void setSpell(String spell)
+			"Amplifying Charm",
+			"Anti-Unlocking Charm",
+			"Banishing Charm",
+			"Disarming Charm",
+			"Fixing Charm",
+			"Shrinking Charm",
+			"Talon-Clipping Charm",
+			"Tooth-Shrinking Charm",
+			"Unlocking Charm",
+			"Stream of Flames Charm",
+			"Repairing Charm",
+			"Lightning Charm",
+			"Invisibility Charm"
+		};
+	
+	public static String[]	PROTECTIVE_SPELLS =
 		{
-			this.spell = spell;
-		}
-	    
+			"Invisibility Spell",			// Hides a person
+			"Force Field Spell",
+			"Total Protection Speel",		// Protects an area for an extended period of time
+			"Invibility Shield Spell"		// Hides an area
+		};
+	
+	public static String[] JINX_SPELLS = 
+		{
+			"Backfiring Jinx",
+			"Cantis Jinx",					// Causes victim to only want to sing
+			"Dancing Feet Jinx",
+			"Ebublio Jinx",					// Traps victim in a bubble
+			"Finger-Removing Jinx",
+			"Jelly-Brain Jinx",
+			"Knockback Jinx",
+			"Levicorpus Jink",				// Causes victim to be lifted in air by their feet
+			"Vermiculus Jink"				// Transforms victim into a worm
+		};
+	
+	public static String[] HEX_SPELLS = 
+		{
+			"Redactum Skullus Hex",			// Shrinks the head of the victim
+			"Stickfast Hex"					// Makes the victim feet stick to the ground
+		};
+	
+	/*
+	 * Constructor Method
+	 * 
+	 */
+	
+	public Spell(int type, String name)
+	{
+		spellType = type;
+		spellName = name;
+	}
+
+	/*
+	 * Getters and Setters
+	 * 
+	 */
+	
+	public int getSpellType()
+	{
+		return spellType;
+	}
+
+	public void setSpellType(int type)
+	{
+		spellType = type;
+	}
+
+	public String getSpellName()
+	{
+		return spellName;
+	}
+
+	public void setSpellName(String name)
+	{
+		spellName = name;
+	}
+
+	public String getSpell()
+	{
+		return spell;
+	}
+
+	public void setSpell(String spell)
+	{
+		this.spell = spell;
+	}
 }
-
-
-
-
-
-
-
-
-

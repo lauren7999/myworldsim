@@ -1,30 +1,36 @@
 package myworldsim;
 
-public class WorldLocation 
+public class WorldLocation
 {
-	
 	/*
-	 * 
 	 * Class Instance Variables
+	 * 
 	 */
 	
-	private short x;  //width (columns)
-	private short y;  // length (rows)
-
+	private short	x;		// Width (columns)
+	private short	y;		// Length (rows)
+	
+	/*
+	 * Class Constants
+	 * 
+	 */
+	
 	
 	/*
 	 * Getters
 	 * 
 	 */
 	
-	public short getX() {
+	public short getX()
+	{
 		return x;
 	}
-	public short getY() {
+	
+	public short getY()
+	{
 		return y;
 	}
-	
-	
+		
 	/*
 	 * Constructor
 	 * 
@@ -34,6 +40,5 @@ public class WorldLocation
 	{
 		this.x = x;
 		this.y = y;
-		
 	}
 }

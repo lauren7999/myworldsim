@@ -1,39 +1,35 @@
 package myworldsim;
 
 public class PotionsWitch extends Witch
-
 {
-	
 	/*
 	 * Class Instance Variables
+	 * 
 	 */
 	
-	private int potionsWitch;
 	
 	
 	/*
 	 * Class Constants
+	 * 
 	 */
-
+	
 	
 	
 	/*
-	 * Constructor Method
+	 * Constructor Methods
+	 * 
 	 */
+	
 	
 	
 	/*
-	 * ACtions
+	 * Actions
+	 * 
 	 */
-	public void brew ()
+	
+	public void brew()
 	{
 		
 	}
-	public void heals() //heals others; doctor witch
-	{
-		
-	}
-
 }
-
-

@@ -1,43 +1,41 @@
 package myworldsim;
 
-public class NukeTree extends Tree
+public class NukeTree extends TreeModel
 {
 	/*
 	 * Class Instance Variables
+	 * 
 	 */
 	
-	private int treeNumberofSilos;
-	private int treeNumberofMissles;
-	
+	private int	treeNumberOfSilos;
+	private int	treeNumberOfMissiles;
 	
 	/*
 	 * Class Constants
-	 */	
+	 * 
+	 */
 	
-	private final int DEFAULT_NUMBER_OF_SILOS = 10;
-	private final int DEFAULT_NUMBER_OF_MISSLES	 = 340;
-	private final int NUMBER_OF_MISLES_PER_BRANCH = 2;
-	private final int NUMBER_OF_MISSLES_PER_ROOT = 10;
+	private final int	DEFAULT_NUMBER_OF_SILOS			= 10;
+	private final int	DEFAULT_NUMBER_OF_MISSILES		= 50;
+	private final int	NUMBER_OF_MISSILES_PER_BRANCH	= 2;
+	private final int	NUMBER_OF_MISSILES_PER_ROOT		= 10;
 	
 	/*
-	 * Contructor Method
+	 * Constructor Method
+	 * 
 	 */
-
+	
 	public NukeTree()
 	{
-		treeNumberofSilos = DEFAULT_NUMBER_OF_SILOS;
-		treeNumberofMissles = DEFAULT_NUMBER_OF_MISSLES;
+		treeNumberOfSilos		= DEFAULT_NUMBER_OF_SILOS;
+		treeNumberOfMissiles	= DEFAULT_NUMBER_OF_MISSILES;
 	}
-	public NukeTree(int number, int branches, int roots, int silos, int missles)
+	
+	public NukeTree(int number, int branches, int roots, int silos, int missiles)
 	{
 		super(number, branches, roots);
 		
-		treeNumberofSilos = silos;
-		treeNumberofMissles = missles;
-		
+		treeNumberOfSilos 	 = silos;
+		treeNumberOfMissiles = missiles;
 	}
-	
-	
 }
-
-

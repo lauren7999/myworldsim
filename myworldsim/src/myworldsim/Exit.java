@@ -1,52 +1,63 @@
 package myworldsim;
 
-public class Exit 
+public class Exit
 {
-	/* 
-	 * Class instance variables
+	/*
+	 * Class Instance Variables
+	 * 
+	 * An Exit leads nowhere if its Direction is NOWHERE and it exits to a Location that is NOWHERE
+	 * 
 	 */
 	
-	private Direction    exitDirection;
-	private Location     exitToLocation;
+	private Direction	exitDirection;
+	private Location	exitToLocation;
 	
 	/*
 	 * Class Constants
+	 * 
 	 */
 	
+	public static final Direction NOWHERE = null;
 	
 	/*
-	 * Constructor method
+	 * Constructor Methods
+	 * 
 	 */
 	
-	
+	public Exit()
+	{
+		exitDirection	= NOWHERE;
+		exitToLocation	= null;
+	}
 	
 	public Exit(Direction direction, Location location)
 	{
-		//one-way exits: inside direction is NOWHERE, such as Emergency Exits
-		exitDirection    = direction;
-		exitToLocation     = location;
+		exitDirection	= direction;
+		exitToLocation	= location;
 	}
-
-
-/*
- * Getters
- */
-
-	public Direction getExitDirection() {
+	
+	/*
+	 * Getters
+	 * 
+	 */
+	
+	public Direction getDirection()
+	{
 		return exitDirection;
 	}
-
-	public Location getExitToLocation() {
+	
+	public Location getExitToLocation()
+	{
 		return exitToLocation;
 	}
-
-
-	public void setLocation(Location location) {
-		// TODO Auto-generated method stub
-		
+	
+	/*
+	 * Setters
+	 * 
+	 */
+	
+	public void setLocation(Location location)
+	{
+		exitToLocation = location;
 	}
-
-
-
 }
-

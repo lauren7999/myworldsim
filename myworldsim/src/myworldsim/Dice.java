@@ -1,6 +1,6 @@
 package myworldsim;
 
-public class Dice 
+public class Dice
 {
 
 }

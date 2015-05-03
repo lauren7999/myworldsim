@@ -1,57 +1,55 @@
 package myworldsim;
 
-import java.awt.Dimension;
-
-
-public class Location 
+public class Location
 {
-
 	/*
 	 * Class Instance Variables
-	 */
-	private WorldLocation                         location;             //Where it is; world location coordinates: X, Y
-	private LocationTypes                        locationTypes;         //initially, when a location is created it is a world-type location     
-	private String                               locationDescription;  //Initially, when a location is created it is described as a world-type location
-	private Exit[]                               locationExits;       //one-way exits: inside direction is NOWHERE, such as Emergency Exits
-
-	
-	
-	
-	
-	/*   
-	 * Class Constants
+	 * 
 	 */
 	
-
+	private WorldLocation	location;				// Where it is: world location coordinates: x, y
+	private LocationTypes	locationType;			// Initially, when a Location is created it is a World-type Location
+	private String			locationDescription;	// Initially, when a Location is created it is described as a World-type Location
+	private Exit[]			locationExits;			// One-way exits: inside direction is NOWHERE, such as Emergency Exits
 	
 	/*
-	 * Constructor Method
+	 * Class Constants
+	 * 
 	 */
 	
+	
+	
+	/*
+	 * Consructor Methods
+	 * 
+	 */
+
 	public Location()
 	{
-		//a location is NOWHERE if its WorldLocation is null
-		
-		location                   = null;
-		LocationTypes locationType = LocationTypes.BLOCKED;
-		locationDescription        = null;
-		locationExits              = null;
+		// A Location is NOWHERE if its WorldLocation is null
+		location 			= null;
+		locationType		= LocationTypes.BLOCKED;
+		locationDescription	= null;
+		locationExits 	  	= null;
 	}
-	public Location(WorldLocation loc, WorldDimension dimension, String description, LocationTypes type) //where, how big am i, and then description of location i am in (now filled in until decided waht is in the location)
-	{
-		location                    = loc;
-		locationDescription         = description;
-		
-		
-		
-		//Do not create an exit for nowhere
-		locationExits               = new Exit[Direction.values().length-1];
 	
+	public Location(WorldLocation loc, WorldDimension dimension, String description, LocationTypes type)
+	{
+		location		  	= loc;
+		locationDescription = description;
+		locationType		= type;
+		locationExits 	  	= new Exit[Direction.values().length];
+		
+		// Create the Exits
+		for (int exit = 0; exit < Direction.values().length; exit++)
+		{
+			locationExits[exit] = new Exit();
+		}
 	}
 
-	
 	/*
 	 * Getters
+	 * 
 	 */
 
 	public WorldLocation getLocation()
@@ -59,41 +57,37 @@ public class Location
 		return location;
 	}
 
-	public String getLocationDescription() 
+	public String getDescription()
 	{
 		return locationDescription;
 	}
-	public LocationTypes  getType()
+
+	public LocationTypes getType()
 	{
-		return locationTypes;
+		return locationType;
 	}
-	public Exit getExit(Direction direction) 
+	
+	public Exit getExit(int exit)
 	{
-		return locationExits(direction.ordinal() - 1);
+		return locationExits[exit];
 	}
-
-
-	private Exit locationExits(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
+	
 	/*
 	 * Setters
 	 * 
 	 */
+	
 	public void setDescription(String description)
 	{
 		locationDescription = description;
 	}
-	
+
 	public void setType(LocationTypes type)
 	{
-		locationTypes = type;
+		locationType = type;
 	}
-	
-	public void setExit(Direction direction, Location location )
+
+	public void setExit(Direction direction, Location location)
 	{
 		locationExits[direction.ordinal()].setLocation(location);
 	}
@@ -102,18 +96,9 @@ public class Location
 	 * Action Methods
 	 * 
 	 */
+	
 	public void build(LocationTypes type)
 	{
-		locationTypes = type;
+		locationType = type;
 	}
-	public Exit getExit(int ordinal) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public Object getDimesion() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 }
