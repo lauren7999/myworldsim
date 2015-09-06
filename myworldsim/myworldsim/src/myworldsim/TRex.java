@@ -80,6 +80,8 @@ public class TRex extends Creature
 		trexArms			= DEFAULT_TREX_ARMS;
 		trexTailLength		= DEFAULT_TREX_TAIL_LENGTH;
 		trexWhippingPower 	= DEFAULT_TREX_WHIPPING_POWER;
+		
+		Weapon defaultWeapon = new Gun(type, damage, weight, accuracy, range, mobility, automatic, ammoCapacity, caliber, recoil, scope, RPM);
 	}
 	
 	public TRex(int health, int lives, int speed, int fangLength, int clawLength, int armor, int length, int width, int height, CreatureVision vision, int jump, int legs, int hearing, int chomping, int stomping, int arms, int tailLength, int whipping)

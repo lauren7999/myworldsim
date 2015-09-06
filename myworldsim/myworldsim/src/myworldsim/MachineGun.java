@@ -1,5 +1,7 @@
 package myworldsim;
 
+enum class MachineGun;
+
 public class MachineGun extends Gun
 {
 	/*
@@ -7,6 +9,7 @@ public class MachineGun extends Gun
 	 * 
 	 */
 	
+	private int             weaponType;
 	private int				machineGunMount;
 	
 	/*
@@ -26,6 +29,29 @@ public class MachineGun extends Gun
 	private final int		DEFAULT_MACHINE_GUN_WEIGHT		= 30;
 	private final int		DEFAULT_MACHINE_GUN_AMMO		= 250;
 	private final int		DEFAULT_MACHINE_GUN_RPM			= 600;
+	
+	
+	
+	//M60 Machinegun
+	public static final int[]	M60_MACHINE_GUN  			= { M60,
+																100,		//capacity
+																250,		//ammo left
+																50,
+																12.7,
+																485,
+																NO_SCOPE
+																};
+	//M2
+	public static final double [] M2_MACHINE_GUN 			= { AUTOMATIC,
+																	100,
+																	100,
+																	12.7,
+																	485,
+																	NO_SCOPE
+																};
+	
+	
+	
 	
 	/*
 	 * Constructor Method

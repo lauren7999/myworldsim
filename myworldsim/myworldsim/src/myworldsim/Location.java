@@ -11,6 +11,8 @@ public class Location
 	private LocationTypes	locationType;			// Initially, when a Location is created it is a World-type Location
 	private String			locationDescription;	// Initially, when a Location is created it is described as a World-type Location
 	private Exit[]			locationExits;			// One-way exits: inside direction is NOWHERE, such as Emergency Exits
+	private Object West;
+	private Object NorthEast;
 	
 	/*
 	 * Class Constants
@@ -67,9 +69,42 @@ public class Location
 		return locationType;
 	}
 	
-	public Exit getExit(int exit)
+	public int getExit(String direction, Object SouthWest, Object Up, Object Down, Object SouthEast, Object NorthWest)
 	{
-		return locationExits[exit];
+		int exitNumber = 0; //default to north
+		
+		if (direction.equalsIgnoreCase(Direction.NORTH.toString()) || direction.equalsIgnoreCase("N")){
+			exitNumber = 0;
+		}
+		
+		else if (direction.equalsIgnoreCase(Direction.SOUTH.toString()) || direction.equalsIgnoreCase("S")){
+			exitNumber = 1;
+		}
+		else if (direction.equalsIgnoreCase(Direction.EAST.toString())|| direction.equalsIgnoreCase("E")){
+			exitNumber = 2;
+		}
+		else if (direction.equalsIgnoreCase(West.toString())|| direction.equalsIgnoreCase("W")){
+			exitNumber = 3;
+		}
+		else if (direction.equalsIgnoreCase(NorthEast.toString())|| direction.equalsIgnoreCase("NE")){
+			exitNumber = 4;
+		}
+		else if (direction.equalsIgnoreCase(NorthWest.toString())|| direction.equalsIgnoreCase("NW")){
+			exitNumber = 5;
+		}
+		else if (direction.equalsIgnoreCase(SouthEast.toString())|| direction.equalsIgnoreCase("SE")){
+			exitNumber = 6;
+		}
+		else if (direction.equalsIgnoreCase(SouthWest.toString())|| direction.equalsIgnoreCase("SW")){
+			exitNumber = 7;
+		}
+		else if(direction.equalsIgnoreCase(Up.toString())|| direction.equalsIgnoreCase("U")){
+			exitNumber = 8;
+		}
+		else if(direction.equals(Down.toString())|| direction.equalsIgnoreCase("D")){
+			exitNumber = 9;
+		}
+		return exitNumber;
 	}
 	
 	/*
@@ -100,5 +135,20 @@ public class Location
 	public void build(LocationTypes type)
 	{
 		locationType = type;
+	}
+
+	public int getExit(String commandParameters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Location getExit(int exitNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Location getExitToLocation() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

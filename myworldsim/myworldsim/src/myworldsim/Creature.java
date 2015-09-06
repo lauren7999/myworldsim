@@ -1,5 +1,8 @@
 package myworldsim;
 
+import java.util.List;
+import java.util.LinkedList;
+
 /*
  * Create Class
  * 
@@ -27,6 +30,8 @@ public class Creature
 	private int							creatureHearing;
 	private	int							creatureChompingPower;
 	private int							creatureStompingPower;
+	
+	private List<Weapon>						weaponList;
 	
 	/*
 	 * Class Constants
@@ -86,6 +91,8 @@ public class Creature
 		creatureHearing			= DEFAULT_CREATURE_HEARING;
 		creatureChompingPower 	= DEFAULT_CREATURE_CHOMPING_POWER;
 		creatureStompingPower	= DEFAULT_CREATURE_STOMPING_POWER;
+		
+		weaponList				= new LinkedList<Weapon>();
 	}
 	
 	// Used by Troll class
@@ -105,6 +112,8 @@ public class Creature
 		creatureHearing			= DEFAULT_CREATURE_HEARING;
 		creatureChompingPower 	= DEFAULT_CREATURE_CHOMPING_POWER;
 		creatureStompingPower	= DEFAULT_CREATURE_STOMPING_POWER;
+		
+		weaponList				= new LinkedList<Weapon>();
 	}
 	
 	// Used by TRex class
@@ -124,6 +133,8 @@ public class Creature
 		creatureHearing			= DEFAULT_CREATURE_HEARING;
 		creatureChompingPower 	= DEFAULT_CREATURE_CHOMPING_POWER;
 		creatureStompingPower	= DEFAULT_CREATURE_STOMPING_POWER;
+		
+		weaponList				= new LinkedList<Weapon>();
 	}
 	
 	public Creature(int health, int lives, int speed, int fangLength, int clawLength, int armor, int length, int width, int height, CreatureVision vision, int jump, int legs, int hearing, int chomping, int stomping)
@@ -141,6 +152,8 @@ public class Creature
 		creatureHearing			= hearing;
 		creatureChompingPower 	= chomping;
 		creatureStompingPower	= stomping;
+		
+		weaponList				= new LinkedList<Weapon>();
 	}
 	
 	/*
@@ -276,6 +289,30 @@ public class Creature
 	public void setStompingPower(int stompingPower)
 	{
 		creatureStompingPower = stompingPower;
+	}
+	
+	public List<Weapon> getWeaponList() {
+		return weaponList;
+	}
+	
+	public Weapon getWeapon(int number) {
+		
+		//create useless weapon
+		Weapon weapon = null;		
+  		
+		if (weaponList.size() >= number) {
+			return weaponList.get(number - 1);
+		}
+		
+		return weapon;
+	}
+	
+	public void setWeaponList(List<Weapon> weaponList) {
+		this.weaponList = weaponList;
+	}
+	
+	public void addWeapon(Weapon weapon) {
+		weaponList.add(weapon);
 	}
 	
 	/*

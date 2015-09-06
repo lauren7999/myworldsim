@@ -3,6 +3,8 @@ package myworldsim;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class World
@@ -13,6 +15,9 @@ public class World
 	 */
 
 	private Location[][]	worldMap;
+	private List<TRex>		tRexes;  //AI
+	private List<Wolf>		wolves;  //ai
+	private List<Witch>		witches; //ai
 	
 	/*
 	 * Getters / Setters
@@ -46,7 +51,7 @@ public class World
 	// 800 x 800 	OK - TOOK 30 SECONDS TO LESS THAN 1 MINUTE
 	// 1000 X 1000 	TOOK ALMOST 3 MINUTES
 
-	private static final 	WorldDimension 	WORLD_LOCATIONS							= new WorldDimension((short)(800), (short)(800));	// In Locations: 1 level/floor
+	public static final 	WorldDimension 	WORLD_LOCATIONS							= new WorldDimension((short)(800), (short)(800));	// In Locations: 1 level/floor
 	public static final 	WorldDimension	WORLD_LOCATION_DIMENSION				= new WorldDimension((short)(1), (short)(1));		// x, y: in inches (x:width, y:length)
 	private static final 	String			WORLD_LOCATION_DESCRIPTION				= "World Location ";
 	private final			String			WORLD_ARRAY_CREATION_FAILED_MESSAGE 	= "World::World(): World array creation out-of-memory exception.";
@@ -60,6 +65,10 @@ public class World
 	
 	public World()
 	{
+		
+		tRexes = new LinkedList<TRex>();
+		wolves = new LinkedList<Wolf>();
+		witches = new LinkedList<Witch>();
 		/*
 		 * Create the World Locations
 		 * 
@@ -93,12 +102,12 @@ public class World
 		
 		try
 		{
-			System.out.print("World::World(): Creating the World " + WORLD_LOCATIONS.getWidth() + " x " + WORLD_LOCATIONS.getLength() + " array ... ");
+			System.out.print("World::World(): Creating the World " + WORLD_LOCATIONS.getWidth() + " x " + WORLD_LOCATIONS.getHeight() + " array ... ");
 			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			Date date = new Date();
 			System.out.println(dateFormat.format(date));
 			
-			worldMap = new Location[WORLD_LOCATIONS.getWidth()][WORLD_LOCATIONS.getLength()];
+			worldMap = new Location[WORLD_LOCATIONS.getWidth()][WORLD_LOCATIONS.getHeight()];
 			
 			try
 			{
@@ -486,13 +495,24 @@ public class World
 	}
 	
 	/*
-	 * Move Method
+	 * Create Creatures Method
 	 * 
 	 */
 	
-	public void move()
-	{
+	public boolean createCreatures() {
+		boolean created = false;
 		
+		//Create TRexes
+		int numberOfTrexes =  randomizer(10000);
+		
+		TRex[] myTRexes = new TRex[numberOfTrexes];
+		
+		for (int index = 1; index <= numberOfTrexes; index++) {
+			myTRexes[index] = new TRex();
+			
+		}
+	
+		return created;
 	}
 		
 	/*
